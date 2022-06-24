@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Backend\CompanyController;
+use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\PostCategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,3 +22,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('company', CompanyController::class);
+Route::resource('post', PostController::class);
+Route::resource('postcategory', PostCategoryController::class);

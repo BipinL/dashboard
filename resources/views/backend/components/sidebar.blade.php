@@ -24,8 +24,8 @@
                                 </span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="/post" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span
-                                    class="hide-menu"> Post Category
+                            <a href="/category" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span
+                                    class="hide-menu">Category
                                 </span></a>
                         </li>
                     </ul>

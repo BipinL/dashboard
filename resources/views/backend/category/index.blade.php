@@ -6,19 +6,18 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <span class="fw-bold fs-2">Post Category</span>
-                            <a href="/postcategory/create" class="float-end btn btn-info">new post category</a>
+                            <span class="fw-bold fs-2">Category</span>
+                            <a href="/category/create" class="float-end btn btn-info">new category</a>
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                @foreach ($posts as $post)
+                                @foreach ($categories as $category)
                                     <div class="col-md-4">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h4>{{ $post->title }}</h4>
+                                                <h4>{{ $category->name }}</h4>
                                             </div>
-                                            <div class="card-body"> {{ $post->description }} </div>
-                                            <a href="" class="btn btn-success">read more</a>
+                                            <div class="card-body"> {{ $category->slug }} </div>
                                         </div>
                                     </div>
                                 @endforeach

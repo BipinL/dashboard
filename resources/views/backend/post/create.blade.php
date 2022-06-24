@@ -13,27 +13,22 @@
                             <form action="/post"method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="title">Title <span class="text-danger">*</span></label>
+                                    <label for="title">Category <span class="text-danger">*</span></label>
                                     <input id="title" class="form-control" type="text" name="title"
-                                        placeholder="enter news title">
+                                        placeholder="enter news category">
                                 </div>
                                 <div class="form-group">
-                                    <label for="slug">Slug</label>
-                                    <input id="slug" class="form-control" type="text" name="slug">
+                                    <label for="category_id">Select Category</label>
+                                    <select id="category_id" class="form-control" name="category_id">
+                                        @foreach ($categories as $category)
+                                            <option value="$category->id"> {{ $category->name }} </option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <div class="form-group">
-                                    <label for="description">Description <span class="text-danger">*</span></label>
-                                    <textarea id="description" class="form-control" name="description" rows="3"></textarea>
-                                </div>
-                                {{-- <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="image">Upload Image</label>
-                                            <input id="image" class="form-control" type="file" name="image"
-                                                accept="image/jpg,image/png">
-                                        </div>
-                                    </div>
-                                </div> --}}
+
+
+
+
                                 <button type="submit" class="btn btn-info">Save record</button>
                             </form>
                         </div>

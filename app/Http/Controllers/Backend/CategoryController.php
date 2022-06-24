@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
-class CategoryPostController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +16,8 @@ class CategoryPostController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('backend.category.index', compact('categories'));
     }
 
     /**
@@ -23,7 +27,7 @@ class CategoryPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.category.create');
     }
 
     /**
@@ -34,7 +38,10 @@ class CategoryPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Category();
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
+        $category->save();
     }
 
     /**
@@ -45,7 +52,8 @@ class CategoryPostController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+        return view('backend.category.show', compact('category'));
     }
 
     /**
@@ -56,7 +64,8 @@ class CategoryPostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('backend.category.edit', compact('category'));
     }
 
     /**
@@ -68,7 +77,11 @@ class CategoryPostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->name = $request->name;
+        $category->Str::slug($request->name);
+        $category->update();
+        return redirect('/category');
     }
 
     /**
@@ -79,6 +92,8 @@ class CategoryPostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('/category');
     }
 }

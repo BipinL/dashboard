@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/', [Pagecontrollr::class, 'home']);
 
 Auth::routes();
 

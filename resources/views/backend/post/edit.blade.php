@@ -12,6 +12,7 @@
                         <div class="card-body">
                             <form action="/post/ {{ $post->id }} "method="post" enctype="multipart/form-data">
                                 @csrf
+                                @method('put')
                                 <div class="form-group">
                                     <label for="title">Title <span class="text-danger">*</span></label>
                                     <input id="title" class="form-control" type="text" name="title"

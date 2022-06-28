@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <div class="row">
                                 @foreach ($categories as $category)
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="card">
                                             <div class="card-header">
                                                 <h4>{{ $category->name }}</h4>
@@ -27,6 +27,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 @endsection

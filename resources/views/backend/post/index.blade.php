@@ -17,8 +17,19 @@
                                             <div class="card-header">
                                                 <h4>{{ $post->title }}</h4>
                                             </div>
-                                            <div class="card-body"> {{ $post->description }} </div>
-                                            <a href="" class="btn btn-success">read more</a>
+                                            <div class="card-body"> {!! $post->description !!} </div>
+
+                                            <div class="d-flex ">
+                                                @csrf
+                                                @method('delete')
+                                                <a href="/post/{{ $post->id }}/edit " class="btn btn-info m-2">edit</a>
+
+
+                                                <button type="submit" class="btn btn-danger m-2">delete</button>
+
+
+                                            </div>
+
                                         </div>
                                     </div>
                                 @endforeach

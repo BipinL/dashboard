@@ -44,6 +44,7 @@ class PostController extends Controller
         $post->slug = $request->slug;
         $post->description = $request->description;
         $post->save();
+        $post->categories()->attach($request->category_id);
         return redirect('/post');
     }
 
@@ -84,6 +85,7 @@ class PostController extends Controller
         $post->slug = $request->slug;
         $post->description = $request->description;
         $post->update();
+        $post->categories()->sync($request->category_id);
         return redirect('/post');
     }
 

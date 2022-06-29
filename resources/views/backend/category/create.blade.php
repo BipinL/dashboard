@@ -14,13 +14,10 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="name">Name <span class="text-danger">*</span></label>
-                                    <input id="name" class="form-control" type="text" name="name"
+                                    <input id="name" class="form-control" type="text" name="category_name"
                                         placeholder="enter category name">
                                 </div>
-                                <div class="form-group">
-                                    <label for="slug">Slug</label>
-                                    <input id="slug" class="form-control" type="text" name="slug">
-                                </div>
+
 
                                 <button type="submit" class="btn btn-info">Save record</button>
                             </form>

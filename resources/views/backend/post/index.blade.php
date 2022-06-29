@@ -19,7 +19,7 @@
                                             </div>
                                             <div class="card-body"> {!! $post->description !!} </div>
 
-                                            <div class="d-flex ">
+                                            <form action="/post/{{ $post->id }} "method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <a href="/post/{{ $post->id }}/edit " class="btn btn-info m-2">edit</a>
@@ -27,9 +27,7 @@
 
                                                 <button type="submit" class="btn btn-danger m-2">delete</button>
 
-
-                                            </div>
-
+                                            </form>
                                         </div>
                                     </div>
                                 @endforeach

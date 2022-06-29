@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CompanyController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Frontend\Pagecontroller;
 use App\Http\Controllers\PostCategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [Pagecontrollr::class, 'home']);
+Route::get('/', [Pagecontroller::class, 'home']);
 
 Auth::routes();
 
